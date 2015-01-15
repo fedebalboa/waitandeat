@@ -1,0 +1,47 @@
+<form ng-submit="saveParty()" class="form-inline party-form">
+  <div class="form-group">
+    <label class="sr-only" for="partyName">Party name</label>
+    <input ng-model="party.name" type="text" class="form-control" id="partyName" placeholder="Name">
+  </div>
+  <div class="form-group">
+    <label class="sr-only" for="phoneNumber">Password</label>
+    <input ng-model="party.phone" type="text" class="form-control" id="phoneNumber" placeholder="Phone">
+  </div>
+  <div class="form-group">
+    <label class="sr-only" for="sizeOfParty">Password</label>
+    <input ng-model="party.size" type="text" class="form-control" id="sizeOfParty" placeholder="Size of Party">
+  </div>
+
+  <button type="submit" class="btn btn-primary">Add party</button>
+</form>
+
+<table class="table table-stripped table-bordered">
+  <thead>
+    <tr>
+      <th>Done?</th>
+      <th>Info</th>
+      <th>Notify</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tr ng-repeat="party in parties">
+    <td><input type="checkbox"></td>
+    <td>
+      <div><strong>{{party.name}} ({{party.size}} people) </strong></div>
+      <div>{{party.phone}}</div>
+      <div>
+      <!--TODO Add date created-->
+      </div>
+    </td>
+    <td>
+      <div>
+      <!--TODO Add party.notified--> 
+      </div>
+    </td>
+    <td>
+      <button type="submit" class="btn btn-success">Enviar SMS</button>
+      <button type="submit" class="btn btn-danger">Eliminar</button>
+
+    </td>
+  </tr>
+</table>
